@@ -33,11 +33,14 @@ const bubbleTea = {
       data: formData,
     }).done(function(data) {
       bubbleTea.user = data.user;
+      $('#sign-in').hide();
       console.log(data);
+      console.log('sign-in works');
     }).fail(function(jqxhr) {
       console.error(jqxhr);
     });
   });
+
 
   // Change password
   $('#change-password').on('submit', function(e) {

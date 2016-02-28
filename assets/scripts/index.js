@@ -29,6 +29,29 @@ let getDrinks = function(){
 //   getBooks();
 // });
 
+const bubbleTea = {
+  baseUrl: 'http://localhost:3000'
+};
+
+$('#sign-in').on('submit', function(e) {
+  e.preventDefault();
+  var formData = new FormData(e.target);
+  $.ajax({
+    url: bubbleTea.baseUrl + '/sign-in',
+    method: 'POST',
+    contentType: false,
+    processData: false,
+    data: formData,
+  }).done(function(data) {
+    bubbleTea.user = data.user;
+    $('.btn.sign-in').hide();
+    console.log(data);
+  }).fail(function(jqxhr) {
+    console.error(jqxhr);
+  });
+});
+
 $(document).ready(function(){
   getDrinks();
+
 });
