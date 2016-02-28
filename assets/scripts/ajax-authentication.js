@@ -21,7 +21,6 @@ const bubbleTea = {
   //   });
   // });
 
-  // Sign in
   $('#sign-in').on('submit', function(e) {
     e.preventDefault();
     var formData = new FormData(e.target);
@@ -33,16 +32,15 @@ const bubbleTea = {
       data: formData,
     }).done(function(data) {
       bubbleTea.user = data.user;
-      $('#sign-in').hide();
+      $('.btn.sign-in').hide();
+      $('.btn.change-pw').show();
+      $('.btn.sign-out').show();
       console.log(data);
-      console.log('sign-in works');
     }).fail(function(jqxhr) {
       console.error(jqxhr);
     });
   });
 
-
-  // Change password
   $('#change-password').on('submit', function(e) {
     e.preventDefault();
 
@@ -55,7 +53,6 @@ const bubbleTea = {
 
     $.ajax({
       url: bubbleTea.baseUrl + '/change-password/' + bubbleTea.user.id,
-      // url: 'http://httpbin.org/post',
       method: 'PATCH',
       headers: {
         Authorization: 'Token token=' + bubbleTea.user.token,
@@ -65,6 +62,7 @@ const bubbleTea = {
       data: formData,
     }).done(function(data) {
       console.log(data);
+      console.log('change pw worked');
     }).fail(function(jqxhr) {
       console.error(jqxhr);
     });
@@ -81,13 +79,16 @@ const bubbleTea = {
 
     $.ajax({
       url: bubbleTea.baseUrl + '/sign-out/' + bubbleTea.user.id,
-      // url: 'http://httpbin.org/post',
       method: 'DELETE',
       headers: {
         Authorization: 'Token token=' + bubbleTea.user.token,
       },
     }).done(function(data) {
       console.log(data);
+      console.log('logged out');
+      $('.btn.change-pw').hide();
+      $('.btn.sign-out').hide();
+      $('.btn.sign-in').show();
     }).fail(function(jqxhr) {
       console.error(jqxhr);
     });
