@@ -21,9 +21,9 @@ const bubbleTea = {
   //   });
   // });
 
-  $('#sign-in').on('submit', function(e) {
+  let signIn = function(e) {
     e.preventDefault();
-    var formData = new FormData(e.target);
+    let formData = new FormData(e.target);
     $.ajax({
       url: bubbleTea.baseUrl + '/sign-in',
       method: 'POST',
@@ -35,13 +35,15 @@ const bubbleTea = {
       $('.btn.sign-in').hide();
       $('.btn.change-pw').show();
       $('.btn.sign-out').show();
+      $('.btn.add-drink').show();
+      console.log('signed in')
       console.log(data);
     }).fail(function(jqxhr) {
       console.error(jqxhr);
     });
-  });
+  };
 
-  $('#change-password').on('submit', function(e) {
+  let changePassword = function(e) {
     e.preventDefault();
 
     if (!bubbleTea.user) {
@@ -49,8 +51,7 @@ const bubbleTea = {
       return;
     }
 
-    var formData = new FormData(e.target);
-
+    let formData = new FormData(e.target);
     $.ajax({
       url: bubbleTea.baseUrl + '/change-password/' + bubbleTea.user.id,
       method: 'PATCH',
@@ -66,10 +67,9 @@ const bubbleTea = {
     }).fail(function(jqxhr) {
       console.error(jqxhr);
     });
-  });
+  };
 
-  // Sign out
-  $('#sign-out').on('click', function(e) {
+  let signOut = function(e) {
     e.preventDefault();
 
     if (!bubbleTea.user) {
@@ -89,11 +89,14 @@ const bubbleTea = {
       $('.btn.change-pw').hide();
       $('.btn.sign-out').hide();
       $('.btn.sign-in').show();
+      $('.btn.add-drink').hide();
     }).fail(function(jqxhr) {
       console.error(jqxhr);
     });
-  });
+  };
 
 module.exports = {
-
+  signIn,
+  changePassword,
+  signOut
 };

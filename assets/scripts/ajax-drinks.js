@@ -5,19 +5,30 @@ const bubbleTea = {
 };
 
 
+// let $store_id = $("input[name='drink[store_id]']").val();
+let $store_id = $('#add-drink').submit(function() {
+$("input[name='drinks[store_id]']").val();
+});
+
   // Create drink
-let createDrink = function() {
+let createDrink = function(e) {
+  console.log('add drinks button works');
+  let url = bubbleTea.baseUrl + '/stores/' + $store_id + '/drinks';
+  console.log(url);
+  e.preventDefault();
+  let formData = new FormData(e.target);
     $.ajax({
-      url: bubbleTea.baseUrl + '/drinks',
+      url: bubbleTea.baseUrl + '/stores/' + $store_id + '/drinks',
       headers: {
         Authorization: 'Token token=' + bubbleTea.user.token,
       },
       method: 'POST',
-      // contentType: false,
-      // processData: false,
-      data: new FormData(),
+      contentType: false,
+      processData: false,
+      data: formData,
     }).done(function(data) {
       console.log(data);
+      console.log('Drink created!');
     }).fail(function(jqxhr) {
       console.error(jqxhr);
     });

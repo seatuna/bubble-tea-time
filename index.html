@@ -15,7 +15,7 @@
       <button class="btn pull-right btn-primary btn-md sign-in" data-toggle="modal" data-target="#signInModal">Sign In</button>
 <button type="button" class="btn pull-right btn-primary btn-md sign-out" id="sign-out">Sign Out</button>
 <button class="btn pull-right btn-primary btn-md change-pw" data-toggle="modal" data-target="#passwordModal">Change Password</button>
-<button class="btn pull-right btn-primary btn-md add-drink" data-toggle="modal" data-target="#createDrink">Add Drink</button>
+<button class="btn pull-right btn-primary btn-md add-drink" data-toggle="modal" data-target="#addDrinkModal">Add Drink</button>
 
       <!-- Sign in modal -->
       <div class="modal fade" id="signInModal" tabindex="-1" role="dialog"
@@ -113,7 +113,7 @@
 <!-- End change password modal -->
 
 <!-- Create drink modal -->
-<div class="modal fade" id="createDrink" tabindex="-1" role="dialog"
+<div class="modal fade" id="addDrinkModal" tabindex="-1" role="dialog"
      aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -125,21 +125,33 @@
                        <span class="sr-only">Close</span>
                 </button>
                 <h4 class="modal-title" id="myModalLabel">
-                    Change Password
+                    Add Drink
                 </h4>
             </div>
 
             <!-- Modal Body -->
             <div class="modal-body">
 
-                <form id='change-password' role="form">
+                <form class="form add-drink" id='add-drink' role="form">
                   <div class="form-group">
-                    <label for="newPassword">New Password</label>
-                      <input type="password" class="form-control" name="passwords[new]" placeholder="Old Password"/>
+                    <label for="addName">Name</label>
+                      <input type="text" class="form-control" name="drink[name]"/>
                   </div>
                   <div class="form-group">
-                    <label for="oldPassword">Old Password</label>
-                      <input type="password" class="form-control" name="passwords[old]" placeholder="New Password"/>
+                    <label for="addIngredients">Ingredients</label>
+                      <input type="text" class="form-control" name="drink[ingredients]"/>
+                  </div>
+                  <div class="form-group">
+                    <label for="addToppings">Toppings</label>
+                      <input type="text" class="form-control" name="drink[toppings]"/>
+                  </div>
+                  <div class="form-group">
+                    <label for="addNotes">Notes</label>
+                      <input type="text" class="form-control" name="drink[notes]"/>
+                  </div>
+                  <div class="form-group">
+                    <label for="addStoreId">Store ID</label>
+                      <input type="text" class="form-control" name="drink[store_id]" id="storeId"/>
                   </div>
                   <button type="submit" class="btn btn-default">Submit</button>
                 </form>
