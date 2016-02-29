@@ -45,9 +45,7 @@ let getKftDrinks = function(){
   });
 };
 
-$('.btn.kft').on('click', function() {
-  getKftDrinks();
-});
+
 
 // Click on Chatime button to get only Chatime displayKftDrinks
 let displayChatimeDrinks = function(response){
@@ -69,8 +67,38 @@ let getChatimeDrinks = function(){
   });
 };
 
+// Click on Teado button to get only Teado displayKftDrinks
+let displayTeadoDrinks = function(response){
+  console.log('displayTeadoDrinks works');
+  let drinks = response.store.drinks;
+  let drinkListing = require('./iterate-drinks.handlebars');
+    $('.content').html(drinkListing({drinks
+    }));
+};
+
+let getTeadoDrinks = function(){
+  $.ajax({
+    url: "http://localhost:3000/stores/3",
+    method: 'GET',
+    dataType: 'json'
+  }).done(function(drinks){
+    displayTeadoDrinks(drinks);
+    console.log('getTeadoDrinks work');
+  });
+};
+
+// Event handlers for GET drinks
+
+$('.btn.kft').on('click', function() {
+  getKftDrinks();
+});
+
 $('.btn.chatime').on('click', function() {
   getChatimeDrinks();
+});
+
+$('.btn.teado').on('click', function() {
+  getTeadoDrinks();
 });
 
 
@@ -80,10 +108,9 @@ const bubbleTea = {
   baseUrl: 'http://localhost:3000'
 };
 
-
-$('#sign-in').on('submit', function(e) {
+let signIn = function(e) {
   e.preventDefault();
-  var formData = new FormData(e.target);
+  let formData = new FormData(e.target);
   $.ajax({
     url: bubbleTea.baseUrl + '/sign-in',
     method: 'POST',
@@ -95,13 +122,14 @@ $('#sign-in').on('submit', function(e) {
     $('.btn.sign-in').hide();
     $('.btn.change-pw').show();
     $('.btn.sign-out').show();
+    $('.btn.add-drink').show();
     console.log(data);
   }).fail(function(jqxhr) {
     console.error(jqxhr);
   });
-});
+};
 
-$('#change-password').on('submit', function(e) {
+let changePassword = function(e) {
   e.preventDefault();
 
   if (!bubbleTea.user) {
@@ -109,8 +137,7 @@ $('#change-password').on('submit', function(e) {
     return;
   }
 
-  var formData = new FormData(e.target);
-
+  let formData = new FormData(e.target);
   $.ajax({
     url: bubbleTea.baseUrl + '/change-password/' + bubbleTea.user.id,
     method: 'PATCH',
@@ -126,10 +153,9 @@ $('#change-password').on('submit', function(e) {
   }).fail(function(jqxhr) {
     console.error(jqxhr);
   });
-});
+};
 
-// Sign out
-$('#sign-out').on('click', function(e) {
+let signOut = function(e) {
   e.preventDefault();
 
   if (!bubbleTea.user) {
@@ -149,14 +175,21 @@ $('#sign-out').on('click', function(e) {
     $('.btn.change-pw').hide();
     $('.btn.sign-out').hide();
     $('.btn.sign-in').show();
+    $('.btn.add-drink').hide();
   }).fail(function(jqxhr) {
     console.error(jqxhr);
   });
-});
+};
+
+// Event handlers for authentication
+
+$('#sign-in').on('submit', signIn);
+$('#change-password').on('submit', changePassword);
+$('#sign-out').on('click', signOut);
 
 $(document).ready(function(){
   getDrinks();
   $('.btn.change-pw').hide();
   $('.btn.sign-out').hide();
-  $('.btn.add-drink');
+  $('.btn.add-drink').hide();
 });
