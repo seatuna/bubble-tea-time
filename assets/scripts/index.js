@@ -25,13 +25,61 @@ let getDrinks = function(){
   });
 };
 
-// $('.books').on("click", function() {
-//   getBooks();
-// });
+// Click on Kung Fu Tea button to get only KFT drinks
+let displayKftDrinks = function(response){
+  console.log('displayKftDrinks works');
+  let drinks = response.store.drinks;
+  let drinkListing = require('./iterate-drinks.handlebars');
+    $('.content').html(drinkListing({drinks
+    }));
+};
+
+let getKftDrinks = function(){
+  $.ajax({
+    url: "http://localhost:3000/stores/1",
+    method: 'GET',
+    dataType: 'json'
+  }).done(function(drinks){
+    displayKftDrinks(drinks);
+    console.log('getKftDrinks work');
+  });
+};
+
+$('.btn.kft').on('click', function() {
+  getKftDrinks();
+});
+
+// Click on Chatime button to get only Chatime displayKftDrinks
+let displayChatimeDrinks = function(response){
+  console.log('displayChatimeDrinks works');
+  let drinks = response.store.drinks;
+  let drinkListing = require('./iterate-drinks.handlebars');
+    $('.content').html(drinkListing({drinks
+    }));
+};
+
+let getChatimeDrinks = function(){
+  $.ajax({
+    url: "http://localhost:3000/stores/2",
+    method: 'GET',
+    dataType: 'json'
+  }).done(function(drinks){
+    displayChatimeDrinks(drinks);
+    console.log('getChatimeDrinks work');
+  });
+};
+
+$('.btn.chatime').on('click', function() {
+  getChatimeDrinks();
+});
+
+
+// LOGIN AJAX STUFF HERE, EVENTUALLY WILL BE MOVED TO ANOTHER FILE
 
 const bubbleTea = {
   baseUrl: 'http://localhost:3000'
 };
+
 
 $('#sign-in').on('submit', function(e) {
   e.preventDefault();
@@ -110,4 +158,5 @@ $(document).ready(function(){
   getDrinks();
   $('.btn.change-pw').hide();
   $('.btn.sign-out').hide();
+  $('.btn.add-drink');
 });

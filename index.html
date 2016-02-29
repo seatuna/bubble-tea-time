@@ -15,7 +15,7 @@
       <button class="btn pull-right btn-primary btn-md sign-in" data-toggle="modal" data-target="#signInModal">Sign In</button>
 <button type="button" class="btn pull-right btn-primary btn-md sign-out" id="sign-out">Sign Out</button>
 <button class="btn pull-right btn-primary btn-md change-pw" data-toggle="modal" data-target="#passwordModal">Change Password</button>
-
+<button class="btn pull-right btn-primary btn-md create-drink" data-toggle="modal" data-target="#createDrink">Add Drink</button>
 
       <!-- Sign in modal -->
       <div class="modal fade" id="signInModal" tabindex="-1" role="dialog"
@@ -112,6 +112,54 @@
       </div>
 <!-- End change password modal -->
 
+<!-- Create drink modal -->
+<div class="modal fade" id="createDrink" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <button type="button" class="close"
+                   data-dismiss="modal">
+                       <span aria-hidden="true">&times;</span>
+                       <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    Change Password
+                </h4>
+            </div>
+
+            <!-- Modal Body -->
+            <div class="modal-body">
+
+                <form id='change-password' role="form">
+                  <div class="form-group">
+                    <label for="newPassword">New Password</label>
+                      <input type="password" class="form-control" name="passwords[new]" placeholder="Old Password"/>
+                  </div>
+                  <div class="form-group">
+                    <label for="oldPassword">Old Password</label>
+                      <input type="password" class="form-control" name="passwords[old]" placeholder="New Password"/>
+                  </div>
+                  <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+
+
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default"
+                        data-dismiss="modal">
+                            Close
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- End create drink modal -->
+
 
 </div>
 </nav>
@@ -119,10 +167,17 @@
 <!-- end navbar -->
 
     </head>
+
+<div class="buttons bar">
+<button type="button" class="btn btn-primary btn-md stores kft">Kung Fu Tea</button>
+<button type="button" class="btn btn-primary btn-md stores chatime">Chatime</button>
+<button type="button" class="btn btn-primary btn-md stores teado">Teado</button>
+</div>
+
     <body class="container-fluid">
       <h1>Example</h1>
 
-      <div class="content"></div><br/>
+      <div class="content"></div>
 
     </body>
 </html>
