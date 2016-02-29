@@ -116,18 +116,24 @@ $('#change-password').on('submit', ajaxAuth.changePassword);
 $('#sign-out').on('click', ajaxAuth.signOut);
 
 // Event handlers for drinks
+// Add drink
 $('#add-drink').on('submit', ajaxDrinks.createDrink);
+
+// Update drink, must get container div to get to the update button in handlebars
 $('.content').on('click', '.update-drink', ajaxDrinks.getDrinkId);
 $('#update-drink').on('submit', function(e) {
   ajaxDrinks.updateDrink(e, ajaxDrinks.drinkId);
 });
 
-
+// Delete drink
+$('.content').on('click', '.delete-drink', ajaxDrinks.deleteDrink);
+// $('#delete-drink').on('submit', function(e) {
+//   ajaxDrinks.deleteDrink(e, ajaxDrinks.drinkId);
+// });
 
 $(document).ready(function(){
   getDrinks();
   $('.btn.change-pw').hide();
   $('.btn.sign-out').hide();
   $('.btn.add-drink').hide();
-  $('.btn.update-drink').hide();
 });
