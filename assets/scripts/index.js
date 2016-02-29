@@ -91,16 +91,20 @@ let getTeadoDrinks = function(){
 
 // Event handlers for GET drinks
 
-$('.btn.kft').on('click', function() {
+$('.btn.stores.kft').on('click', function() {
   getKftDrinks();
 });
 
-$('.btn.chatime').on('click', function() {
+$('.btn.stores.chatime').on('click', function() {
   getChatimeDrinks();
 });
 
-$('.btn.teado').on('click', function() {
+$('.btn.stores.teado').on('click', function() {
   getTeadoDrinks();
+});
+
+$('.btn.stores.all').on('click', function() {
+  getDrinks();
 });
 
 // Event handlers for authentication
