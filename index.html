@@ -46,7 +46,7 @@
                           <label for="InputPassword1">Password</label>
                             <input type="password" class="form-control" name="credentials[password]" placeholder="Password"/>
                         </div>
-                        <button type="submit" class="btn btn-default">Submit</button>
+                        <button type="submit" class="btn btn-primary">Submit</button>
                       </form>
 
 
@@ -94,7 +94,7 @@
                           <label for="oldPassword">Old Password</label>
                             <input type="password" class="form-control" name="passwords[old]" placeholder="Old Password"/>
                         </div>
-                        <button type="submit" class="btn btn-default">Submit</button>
+                        <button type="submit" class="btn btn-primary">Submit</button>
                       </form>
 
 
@@ -153,7 +153,7 @@
                     <label for="addStoreId">Store ID</label>
                       <input type="text" class="form-control" name="drinks[store_id]" id="storeId"/>
                   </div>
-                  <button type="submit" class="btn btn-default">Submit</button>
+                  <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
 
 
@@ -172,6 +172,65 @@
 
 <!-- End create drink modal -->
 
+<!-- Update drink modal -->
+<div class="modal fade" id="updateDrinkModal" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Create Drink Modal Header -->
+            <div class="modal-header">
+                <button type="button" class="close"
+                   data-dismiss="modal">
+                       <span aria-hidden="true">&times;</span>
+                       <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    Update Drink
+                </h4>
+            </div>
+
+            <!-- Update Drink Modal Body -->
+            <div class="modal-body">
+
+                <form class="form update-drink" id="update-drink" role="form">
+                  <div class="form-group">
+                    <label for="updateName">Name</label>
+                      <input type="text" class="form-control" name="drinks[name]"/>
+                  </div>
+                  <div class="form-group">
+                    <label for="updateIngredients">Ingredients</label>
+                      <input type="text" class="form-control" name="drinks[ingredients]"/>
+                  </div>
+                  <div class="form-group">
+                    <label for="updateToppings">Toppings</label>
+                      <input type="text" class="form-control" name="drinks[toppings]"/>
+                  </div>
+                  <div class="form-group">
+                    <label for="updateNotes">Notes</label>
+                      <input type="text" class="form-control" name="drinks[notes]"/>
+                  </div>
+                  <div class="form-group">
+                    <label for="updateStoreId">Store ID</label>
+                      <input type="text" class="form-control" name="drinks[store_id]"/>
+                  </div>
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+
+
+            </div>
+
+            <!-- Update Drink Modal Footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default"
+                        data-dismiss="modal">
+                            Close
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- End update drink modal -->
 
 </div>
 </nav>

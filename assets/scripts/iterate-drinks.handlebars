@@ -1,8 +1,10 @@
 {{#each drinks}}
-  <div class="drinks" data-id={{id}}>
+  <div class="drinks">
     Name: {{name}}<br/>
     Ingredients: {{ingredients}}<br/>
     Toppings: {{toppings}}<br/>
     Notes: {{notes}}</br>
+    <button class="btn btn-primary btn-sm update-drink" data-toggle="modal" data-target="#updateDrinkModal" data-id={{id}}>Update</button>
   </div><p>
+
 {{/each}}

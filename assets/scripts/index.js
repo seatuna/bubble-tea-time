@@ -7,6 +7,7 @@
 
 let ajaxAuth = require('./ajax-authentication');
 let ajaxDrinks = require('./ajax-drinks');
+// let drinksHandlebars = require('./iterate-drinks.handlebars');
 
 let displayDrinks = function(response){
   console.log('displayDrinks works');
@@ -23,6 +24,7 @@ let getDrinks = function(){
     dataType: 'json'
   }).done(function(drinks){
     displayDrinks(drinks);
+    console.log(drinks);
     console.log('getDrinks work');
   });
 };
@@ -115,10 +117,17 @@ $('#sign-out').on('click', ajaxAuth.signOut);
 
 // Event handlers for drinks
 $('#add-drink').on('submit', ajaxDrinks.createDrink);
+$('.content').on('click', '.update-drink', ajaxDrinks.getDrinkId);
+$('#update-drink').on('submit', function(e) {
+  ajaxDrinks.updateDrink(e, ajaxDrinks.drinkId);
+});
+
+
 
 $(document).ready(function(){
   getDrinks();
   $('.btn.change-pw').hide();
   $('.btn.sign-out').hide();
   $('.btn.add-drink').hide();
+  $('.btn.update-drink').hide();
 });
