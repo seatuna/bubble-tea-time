@@ -1,8 +1,10 @@
 'use strict';
 
-const bubbleTea = {
-  baseUrl: 'http://localhost:3000'
-};
+let bubbleTea = require('./const_bubbletea');
+
+// const bubbleTea = {
+//   baseUrl: 'http://localhost:3000'
+// };
 
   // Sign up
   // $('#sign-up').on('submit', function(e) {
@@ -25,18 +27,18 @@ const bubbleTea = {
     e.preventDefault();
     let formData = new FormData(e.target);
     $.ajax({
-      url: bubbleTea.baseUrl + '/sign-in',
+      url: bubbleTea.bbtApp.baseUrl + '/sign-in',
       method: 'POST',
       contentType: false,
       processData: false,
       data: formData,
     }).done(function(data) {
-      bubbleTea.user = data.user;
+      bubbleTea.bbtApp.user = data.user;
       $('.btn.sign-in').hide();
       $('.btn.change-pw').show();
       $('.btn.sign-out').show();
       $('.btn.add-drink').show();
-      console.log('signed in')
+      console.log('signed in');
       console.log(data);
     }).fail(function(jqxhr) {
       console.error(jqxhr);
@@ -46,17 +48,17 @@ const bubbleTea = {
   let changePassword = function(e) {
     e.preventDefault();
 
-    if (!bubbleTea.user) {
+    if (!bubbleTea.bbtApp.user) {
       console.error('Wrong!');
       return;
     }
 
     let formData = new FormData(e.target);
     $.ajax({
-      url: bubbleTea.baseUrl + '/change-password/' + bubbleTea.user.id,
+      url: bubbleTea.bbtApp.baseUrl + '/change-password/' + bubbleTea.bbtApp.user.id,
       method: 'PATCH',
       headers: {
-        Authorization: 'Token token=' + bubbleTea.user.token,
+        Authorization: 'Token token=' + bubbleTea.bbtApp.user.token,
       },
       contentType: false,
       processData: false,
@@ -72,16 +74,16 @@ const bubbleTea = {
   let signOut = function(e) {
     e.preventDefault();
 
-    if (!bubbleTea.user) {
+    if (!bubbleTea.bbtApp.user) {
       console.error('Wrong!');
       return;
     }
 
     $.ajax({
-      url: bubbleTea.baseUrl + '/sign-out/' + bubbleTea.user.id,
+      url: bubbleTea.bbtApp.baseUrl + '/sign-out/' + bubbleTea.bbtApp.user.id,
       method: 'DELETE',
       headers: {
-        Authorization: 'Token token=' + bubbleTea.user.token,
+        Authorization: 'Token token=' + bubbleTea.bbtApp.user.token,
       },
     }).done(function(data) {
       console.log(data);

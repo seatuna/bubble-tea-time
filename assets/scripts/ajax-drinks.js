@@ -1,26 +1,27 @@
 'use strict';
 
-const bubbleTea = {
-  baseUrl: 'http://localhost:3000'
-};
+let bubbleTea = require('./const_bubbletea');
+
+// const bubbleTea = {
+//   baseUrl: 'http://localhost:3000'
+// };
 
 
 // let $store_id = $("input[name='drink[store_id]']").val();
-let $store_id = $('#add-drink').submit(function() {
-$("input[name='drinks[store_id]']").val();
-});
+
 
   // Create drink
 let createDrink = function(e) {
+  let $store_id = $("input[name='drinks[store_id]']").val();
   console.log('add drinks button works');
-  let url = bubbleTea.baseUrl + '/stores/' + $store_id + '/drinks';
+  let url = bubbleTea.bbtApp.baseUrl + '/stores/' + $store_id + '/drinks';
   console.log(url);
   e.preventDefault();
   let formData = new FormData(e.target);
     $.ajax({
-      url: bubbleTea.baseUrl + '/stores/' + $store_id + '/drinks',
+      url: bubbleTea.bbtApp.baseUrl + '/stores/' + $store_id + '/drinks',
       headers: {
-        Authorization: 'Token token=' + bubbleTea.user.token,
+        Authorization: 'Token token=' + bubbleTea.bbtApp.user.token,
       },
       method: 'POST',
       contentType: false,
