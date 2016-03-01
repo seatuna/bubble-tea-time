@@ -1,10 +1,7 @@
 'use strict';
 
 let bubbleTea = require('./const_bubbletea');
-
-// const bubbleTea = {
-//   baseUrl: 'http://localhost:3000'
-// };
+let get = require('./get-drinks.js');
 
 
 // let $store_id = $("input[name='drink[store_id]']").val();
@@ -30,6 +27,7 @@ let createDrink = function(e) {
     }).done(function(data) {
       console.log(data);
       console.log('Drink created!');
+      get.getDrinks();
     }).fail(function(jqxhr) {
       console.error(jqxhr);
     });
@@ -42,12 +40,11 @@ let getDrinkId = function(e) {
 console.log(drinkId);
 };
 
-let updateDrink = function (e, i) {
+let updateDrink = function (e) {
   e.preventDefault();
-
   console.log('update drink button works');
   $.ajax({
-    url: bubbleTea.bbtApp.baseUrl + '/drinks/' + i,
+    url: bubbleTea.bbtApp.baseUrl + '/drinks/' + drinkId,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + bubbleTea.bbtApp.user.token,
@@ -58,11 +55,11 @@ let updateDrink = function (e, i) {
   }).done(function(data) {
     console.log('update drink works');
     console.log(data);
+    get.getDrinks();
   }).fail(function(jqxhr) {
     console.error(jqxhr);
   });
 };
-
 
   let deleteDrink = function(e) {
     console.log('delete button works');
@@ -81,6 +78,7 @@ let updateDrink = function (e, i) {
       },
     }).done(function(data) {
       console.log(data);
+      get.getDrinks();
     }).fail(function(jqxhr) {
       console.error(jqxhr);
     });
