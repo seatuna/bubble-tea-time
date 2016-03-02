@@ -308,6 +308,8 @@ webpackJsonp([0],[
 
 	/* WEBPACK VAR INJECTION */(function($) {'use strict';
 
+	var bubbleTea = __webpack_require__(4);
+
 	var displayDrinks = function displayDrinks(response) {
 	  console.log('displayDrinks works');
 	  var drinks = response.drinks;
@@ -318,7 +320,7 @@ webpackJsonp([0],[
 
 	var getDrinks = function getDrinks() {
 	  $.ajax({
-	    url: "http://localhost:3000/drinks",
+	    url: bubbleTea.bbtApp.baseUrl + '/drinks',
 	    method: 'GET',
 	    dataType: 'json'
 	  }).done(function (drinks) {
@@ -339,7 +341,7 @@ webpackJsonp([0],[
 
 	var getKftDrinks = function getKftDrinks() {
 	  $.ajax({
-	    url: "http://localhost:3000/stores/1",
+	    url: bubbleTea.bbtApp.baseUrl + 'stores/1',
 	    method: 'GET',
 	    dataType: 'json'
 	  }).done(function (drinks) {
@@ -359,7 +361,7 @@ webpackJsonp([0],[
 
 	var getChatimeDrinks = function getChatimeDrinks() {
 	  $.ajax({
-	    url: "http://localhost:3000/stores/2",
+	    url: bubbleTea.bbtApp.baseUrl + '/stores/2',
 	    method: 'GET',
 	    dataType: 'json'
 	  }).done(function (drinks) {
@@ -379,7 +381,7 @@ webpackJsonp([0],[
 
 	var getTeadoDrinks = function getTeadoDrinks() {
 	  $.ajax({
-	    url: "http://localhost:3000/stores/3",
+	    url: bubbleTea.bbtApp.baseUrl + '/stores/3',
 	    method: 'GET',
 	    dataType: 'json'
 	  }).done(function (drinks) {
