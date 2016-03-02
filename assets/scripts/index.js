@@ -28,7 +28,7 @@ $('.btn.stores.all').on('click', function() {
 });
 
 // Event handlers for authentication
-
+$('#sign-up').on('submit', ajaxAuth.signUp);
 $('#sign-in').on('submit', ajaxAuth.signIn);
 $('#change-password').on('submit', ajaxAuth.changePassword);
 $('#sign-out').on('click', ajaxAuth.signOut);
@@ -42,7 +42,6 @@ $('.content').on('click', '.update-drink', ajaxDrinks.getDrinkId);
 $('#update-drink').on('submit', function(e) {
   ajaxDrinks.updateDrink(e, ajaxDrinks.drinkId);
 });
-
 
 // Delete drink
 $('.content').on('click', '.delete-drink', ajaxDrinks.deleteDrink);
