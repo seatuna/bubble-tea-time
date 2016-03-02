@@ -1,7 +1,7 @@
 'use strict';
 
 const bbtApp = {
-  baseUrl: 'http://localhost:3000'
+  baseUrl: 'https://tranquil-basin-77065.herokuapp.com'
 };
 
 module.exports = {
