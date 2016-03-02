@@ -341,7 +341,7 @@ webpackJsonp([0],[
 
 	var getKftDrinks = function getKftDrinks() {
 	  $.ajax({
-	    url: bubbleTea.bbtApp.baseUrl + 'stores/1',
+	    url: bubbleTea.bbtApp.baseUrl + '/stores/1',
 	    method: 'GET',
 	    dataType: 'json'
 	  }).done(function (drinks) {
