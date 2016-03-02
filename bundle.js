@@ -53,7 +53,7 @@ webpackJsonp([0],[
 	});
 
 	// Event handlers for authentication
-
+	$('#sign-up').on('submit', ajaxAuth.signUp);
 	$('#sign-in').on('submit', ajaxAuth.signIn);
 	$('#change-password').on('submit', ajaxAuth.changePassword);
 	$('#sign-out').on('click', ajaxAuth.signOut);
@@ -88,26 +88,23 @@ webpackJsonp([0],[
 
 	var bubbleTea = __webpack_require__(4);
 
-	// const bubbleTea = {
-	//   baseUrl: 'http://localhost:3000'
-	// };
-
-	// Sign up
-	// $('#sign-up').on('submit', function(e) {
-	//   e.preventDefault();
-	//   var formData = new FormData(e.target);
-	//   $.ajax({
-	//     url: bubbleTea.baseUrl + '/sign-up',
-	//     method: 'POST',
-	//     contentType: false,
-	//     processData: false,
-	//     data: formData,
-	//   }).done(function(data) {
-	//     console.log(data);
-	//   }).fail(function(jqxhr) {
-	//     console.error(jqxhr);
-	//   });
-	// });
+	var signUp = function signUp(e) {
+	  console.log('sign up button works');
+	  e.preventDefault();
+	  var formData = new FormData(e.target);
+	  $.ajax({
+	    url: bubbleTea.bbtApp.baseUrl + '/sign-up',
+	    method: 'POST',
+	    contentType: false,
+	    processData: false,
+	    data: formData
+	  }).done(function (data) {
+	    console.log('New user created!');
+	    console.log(data);
+	  }).fail(function (jqxhr) {
+	    console.error(jqxhr);
+	  });
+	};
 
 	var signIn = function signIn(e) {
 	  e.preventDefault();
@@ -184,6 +181,7 @@ webpackJsonp([0],[
 	};
 
 	module.exports = {
+	  signUp: signUp,
 	  signIn: signIn,
 	  changePassword: changePassword,
 	  signOut: signOut
