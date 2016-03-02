@@ -1,5 +1,7 @@
 'use strict';
 
+let bubbleTea = require('./const_bubbletea.js');
+
 let displayDrinks = function(response){
   console.log('displayDrinks works');
   let drinks = response.drinks;
@@ -10,7 +12,7 @@ let displayDrinks = function(response){
 
 let getDrinks = function(){
   $.ajax({
-    url: "http://localhost:3000/drinks",
+    url: bubbleTea.bbtApp.baseUrl + '/drinks',
     method: 'GET',
     dataType: 'json'
   }).done(function(drinks){
@@ -31,7 +33,7 @@ let displayKftDrinks = function(response){
 
 let getKftDrinks = function(){
   $.ajax({
-    url: "http://localhost:3000/stores/1",
+    url: bubbleTea.bbtApp.baseUrl + 'stores/1',
     method: 'GET',
     dataType: 'json'
   }).done(function(drinks){
@@ -53,7 +55,7 @@ let displayChatimeDrinks = function(response){
 
 let getChatimeDrinks = function(){
   $.ajax({
-    url: "http://localhost:3000/stores/2",
+    url: bubbleTea.bbtApp.baseUrl + '/stores/2',
     method: 'GET',
     dataType: 'json'
   }).done(function(drinks){
@@ -73,7 +75,7 @@ let displayTeadoDrinks = function(response){
 
 let getTeadoDrinks = function(){
   $.ajax({
-    url: "http://localhost:3000/stores/3",
+    url: bubbleTea.bbtApp.baseUrl + '/stores/3',
     method: 'GET',
     dataType: 'json'
   }).done(function(drinks){
