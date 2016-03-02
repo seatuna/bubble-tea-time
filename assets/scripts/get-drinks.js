@@ -33,7 +33,7 @@ let displayKftDrinks = function(response){
 
 let getKftDrinks = function(){
   $.ajax({
-    url: bubbleTea.bbtApp.baseUrl + 'stores/1',
+    url: bubbleTea.bbtApp.baseUrl + '/stores/1',
     method: 'GET',
     dataType: 'json'
   }).done(function(drinks){
