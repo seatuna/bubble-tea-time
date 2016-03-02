@@ -9,7 +9,7 @@ let ajaxAuth = require('./ajax-authentication');
 let ajaxDrinks = require('./ajax-drinks');
 let get = require('./get-drinks.js');
 
-// Event handlers for GET drinks
+// Event handlers for GET drinks, these are the store buttons
 
 $('.btn.stores.kft').on('click', function() {
   get.getKftDrinks();
@@ -27,7 +27,7 @@ $('.btn.stores.all').on('click', function() {
   get.getDrinks();
 });
 
-// Event handlers for authentication
+// Event handlers for authentication (sign up, sign in, change pw, logout)
 $('#sign-up').on('submit', ajaxAuth.signUp);
 $('#sign-in').on('submit', ajaxAuth.signIn);
 $('#change-password').on('submit', ajaxAuth.changePassword);
@@ -46,9 +46,14 @@ $('#update-drink').on('submit', function(e) {
 // Delete drink
 $('.content').on('click', '.delete-drink', ajaxDrinks.deleteDrink);
 
+
 $(document).ready(function(){
   get.getDrinks();
   $('.btn.change-pw').hide();
   $('.btn.sign-out').hide();
   $('.btn.add-drink').hide();
+  // $('.content').on('load', '.update-and-delete', function(e) {
+  //   $(e.currentTarget).hide();
+  // });
+  $('.content').find("#delete-drink").hide();
 });

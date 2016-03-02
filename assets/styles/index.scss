@@ -3,11 +3,19 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 $pink-orange: #f66;
 $light-orange: #fff2e6;
-$light-pink: #ffe6e6;
+$light-pink: #f2f2f2;
 $button-color: #f99;
 $border-color: #b30;
 $button-hover: #ff4d4d;
 $header-text: #f33;
+$white: #fff;
+
+body {
+  background-attachment: fixed;
+  background-image: url('http://img.photobucket.com/albums/v53/chibi_ynm/tapioca2_zpsreibrwqj.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
 .navbar {
   background-color: $pink-orange;
@@ -29,12 +37,9 @@ $header-text: #f33;
   width: 20%;
 }
 
-.buttons.nav {
-  margin: 0 auto;
-}
-
 .content {
   width: 100%;
+  align-content: center;
 }
 
 .drinks {
@@ -44,12 +49,16 @@ $header-text: #f33;
   border-style: solid;
   float: left;
   font-size: 16px;
+  height: 180px;
   margin: 5px;
   padding: 10px;
-  width: 49%;
+  width: 400px;
 }
 
 h1 {
   color: $header-text;
+  font-size: 50px;
+  font-weight: bolder;
   text-align: center;
+  text-shadow: 3px 3px $white;
 }
