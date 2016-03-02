@@ -47,7 +47,7 @@ $('#update-drink').on('submit', function(e) {
 $('.content').on('click', '.delete-drink', ajaxDrinks.deleteDrink);
 
 
-$(document).ready(function(){
+$(document).ready(function() {
   get.getDrinks();
   $('.btn.change-pw').hide();
   $('.btn.sign-out').hide();
