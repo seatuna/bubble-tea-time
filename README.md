@@ -22,35 +22,35 @@ in-aptly named but much beloved Taiwanese beverage.
 ## User Story
 
 Not logged in:
-*User can click on a ‘store name’ button to toggle menus
-*User can view drink details which include main ingredients, toppings, and
+* User can click on a ‘store name’ button to toggle menus
+* User can view drink details which include main ingredients, toppings, and
 additional information (for example, in taro milk tea, what is taro?)
-*User can scroll down on the page to view more items
-*User can click on the 'sign up' to create an account, which defaults to
+* User can scroll down on the page to view more items
+* User can click on the 'sign up' to create an account, which defaults to
 non-admin status
-*User can click on the 'sign in’ button to sign in using an email and password
+* User can click on the 'sign in’ button to sign in using an email and password
 
 Logged in as admin:
-*Admin can do everything a non-admin can do
-*Admin can click on an add drink button to create a new drink using a form
-*Admin can click on an update button in drink details to access a form for
+* Admin can do everything a non-admin can do
+* Admin can click on an add drink button to create a new drink using a form
+* Admin can click on an update button in drink details to access a form for
 editing a posted item
-*Admin can click on a delete button in drink details to delete a posted item
-*Admin can change password by clicking on a change password button and entering
+* Admin can click on a delete button in drink details to delete a posted item
+* Admin can change password by clicking on a change password button and entering
 their old and new password
-*Admin can click on a logout button to logout from the options menu
+* Admin can click on a logout button to logout from the options menu
 
 Logged in as non-admin:
-*User can do everything a non-admin can do
-*User can change password
+* User can do everything a non-admin can do
+* User can change password
 
 ## Tools
 
 This web app was created using the following:
-*Ruby on Rails
-*HTML / CSS / SASS
-*Bootstrap
-*Handlebars.js
+* Ruby on Rails
+* HTML / CSS / SASS
+* Bootstrap
+* Handlebars.js
 
 ## Some Things to Work On
 Currently, I was unable to hide the update and delete buttons when not logged
