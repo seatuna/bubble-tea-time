@@ -2,26 +2,24 @@
 
 let bubbleTea = require('./const_bubbletea');
 
-// const bubbleTea = {
-//   baseUrl: 'http://localhost:3000'
-// };
+  let signUp = function(e) {
+    console.log('sign up button works')
+    e.preventDefault();
+    var formData = new FormData(e.target);
+    $.ajax({
+      url: bubbleTea.bbtApp.baseUrl + '/sign-up',
+      method: 'POST',
+      contentType: false,
+      processData: false,
+      data: formData,
+    }).done(function(data) {
+      console.log('New user created!')
+      console.log(data);
+    }).fail(function(jqxhr) {
+      console.error(jqxhr);
+    });
+  };
 
-  // Sign up
-  // $('#sign-up').on('submit', function(e) {
-  //   e.preventDefault();
-  //   var formData = new FormData(e.target);
-  //   $.ajax({
-  //     url: bubbleTea.baseUrl + '/sign-up',
-  //     method: 'POST',
-  //     contentType: false,
-  //     processData: false,
-  //     data: formData,
-  //   }).done(function(data) {
-  //     console.log(data);
-  //   }).fail(function(jqxhr) {
-  //     console.error(jqxhr);
-  //   });
-  // });
 
   let signIn = function(e) {
     e.preventDefault();
@@ -98,6 +96,7 @@ let bubbleTea = require('./const_bubbletea');
   };
 
 module.exports = {
+  signUp,
   signIn,
   changePassword,
   signOut
