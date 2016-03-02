@@ -4,7 +4,8 @@
     Ingredients: {{ingredients}}<br/>
     Toppings: {{toppings}}<br/>
     Notes: {{notes}}</br>
-    <button class="btn btn-primary btn-md update-drink" data-toggle="modal" data-target="#updateDrinkModal" data-id={{id}}>Update</button>
-    <button type="button" class="btn btn-primary btn-md delete-drink" data-id={{id}} id="delete-drink">Delete</button>
+
+    <div class="update-and-delete buttons"><button class="btn btn-primary btn-md update-drink" data-toggle="modal" data-target="#updateDrinkModal" data-id={{id}}>Update</button>
+    <button type="button" class="btn btn-primary btn-md delete-drink" data-id={{id}} id="delete-drink">Delete</button></div>
   </div><p>
 {{/each}}
