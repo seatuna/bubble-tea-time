@@ -9,12 +9,29 @@ $border-color: #b30;
 $button-hover: #ff4d4d;
 $header-text: #f33;
 $white: #fff;
+$black: #000;
 
 body {
   background-attachment: fixed;
-  background-image: url('http://img.photobucket.com/albums/v53/chibi_ynm/tapioca2_zpsreibrwqj.jpg');
+  background-color: $black;
+  // background-image: url('http://img.photobucket.com/albums/v53/chibi_ynm/tapioca2_zpsreibrwqj.jpg');
   background-repeat: no-repeat;
   background-size: cover;
+  margin-top: 3em;
+}
+
+h1 {
+  color: $header-text;
+  font-size: 50px;
+  font-weight: bolder;
+  position: relative;
+  text-align: center;
+  text-shadow: 3px 3px $white;
+  z-index: 10;
+}
+
+.below-hero {
+  margin-top: 40em;
 }
 
 .navbar {
@@ -34,12 +51,16 @@ body {
 }
 
 .btn.stores {
+  position: relative;
   width: 20%;
+  z-index: 10;
 }
 
 .content {
-  width: 100%;
   align-content: center;
+  position: relative;
+  width: 100%;
+  z-index: 100;
 }
 
 .drinks {
@@ -55,10 +76,12 @@ body {
   width: 400px;
 }
 
-h1 {
-  color: $header-text;
-  font-size: 50px;
-  font-weight: bolder;
-  text-align: center;
-  text-shadow: 3px 3px $white;
+.hero {
+  margin-left: -1.1em;
+  position: absolute;
+  width: 100%;
+}
+
+.modal-backdrop {
+    z-index: 1020;
 }
