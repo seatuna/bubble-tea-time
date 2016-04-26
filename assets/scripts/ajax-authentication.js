@@ -35,6 +35,8 @@ let signIn = function(e) {
     $('.btn.change-pw').show();
     $('.btn.sign-out').show();
     $('.btn.add-drink').show();
+    $('.update-and-delete').show();
+    $('.navbar-text').html("Welcome " + data.user.email + "!");
     console.log('signed in');
     console.log(data);
   }).fail(function(jqxhr) {
