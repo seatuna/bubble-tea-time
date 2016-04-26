@@ -73,6 +73,27 @@ let deleteDrink = function(e) {
   });
 };
 
+// Populate update modal with text
+let fillUpdate = function(response) {
+  let drink = response.drink;
+  $('#update-name').val(drink.name);
+  $('#update-ingredients').val(drink.ingredients);
+  $('#update-toppings').val(drink.toppings);
+  $('#update-notes').val(drink.notes);
+  $('#update-store').val(drink.store_id);
+};
+
+$(document).on('click','.update-drink', function(){
+  $('#updateDrink').modal('show');
+  $.ajax({
+    url: bubbleTea.bbtApp.baseUrl + '/drinks/' + drinkId,
+    method: 'GET',
+    dataType: 'json'
+  }).done(function(drink){
+    fillUpdate(drink);
+  });
+});
+
 module.exports = {
   createDrink,
   updateDrink,

@@ -11,19 +11,19 @@ let get = require('./get-drinks.js');
 
 // Event handlers for GET drinks, these are the store buttons
 
-$('.btn.stores.kft').on('click', function() {
+$('.btn.kft').on('click', function() {
   get.getKftDrinks();
 });
 
-$('.btn.stores.chatime').on('click', function() {
+$('.btn.chatime').on('click', function() {
   get.getChatimeDrinks();
 });
 
-$('.btn.stores.teado').on('click', function() {
+$('.btn.teado').on('click', function() {
   get.getTeadoDrinks();
 });
 
-$('.btn.stores.all').on('click', function() {
+$('.btn.all').on('click', function() {
   get.getDrinks();
 });
 
@@ -46,14 +46,9 @@ $('#update-drink').on('submit', function(e) {
 // Delete drink
 $('.content').on('click', '.delete-drink', ajaxDrinks.deleteDrink);
 
-
 $(document).ready(function() {
   get.getDrinks();
   $('.btn.change-pw').hide();
   $('.btn.sign-out').hide();
   $('.btn.add-drink').hide();
-  // $('.content').on('load', '.update-and-delete', function(e) {
-  //   $(e.currentTarget).hide();
-  // });
-  $('.content').find("#delete-drink").hide();
 });

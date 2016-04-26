@@ -50,10 +50,15 @@ h1 {
   background-color: $button-hover;
 }
 
-.btn.stores {
+.stores-container {
+  margin: 0 auto;
   position: relative;
-  width: 20%;
-  z-index: 10;
+  width: 100%;
+  z-index: 100;
+
+  .stores-container .btn {
+    width: 15em;
+  }
 }
 
 .content {
@@ -83,5 +88,10 @@ h1 {
 }
 
 .modal-backdrop {
-    z-index: 1020;
+  z-index: 1020;
+}
+
+.navbar-text {
+  color: $white;
+  font-size: 1.2em;
 }

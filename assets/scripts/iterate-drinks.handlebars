@@ -2,11 +2,11 @@
   <div class="drinks" data-id= {{id}}>
     {{name}}<br/> Ingredients: {{ingredients}}<br/> Toppings: {{toppings}}<br/> Notes: {{notes}}</br>
 
-    {{#if current_user}}
+    {{!-- {{#if current_user}} --}}
       <div class="update-and-delete buttons">
         <button class="btn btn-primary btn-md update-drink" data-toggle="modal" data-target="#updateDrinkModal" data-id= {{id}}>Update</button>
         <button type="button" class="btn btn-primary btn-md delete-drink" data-id= {{id}} id="delete-drink">Delete</button>
       </div>
-    {{/if}}
+    {{!-- {{/if}} --}}
   </div>
 {{/each}}

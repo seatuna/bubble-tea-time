@@ -12,7 +12,7 @@
   <nav class="navbar navbar-fixed-top">
     <div class="container-fluid">
 
-      <!-- Sign in modal start -->
+      <p class="navbar-text"></p>
       <button class="btn pull-right btn-primary btn-md signUp" data-toggle="modal" data-target="#signUpModal">Sign Up</button>
       <button class="btn pull-right btn-primary btn-md sign-in" data-toggle="modal" data-target="#signInModal">Sign In</button>
       <button type="button" class="btn pull-right btn-primary btn-md sign-out" id="sign-out">Sign Out</button>
@@ -230,23 +230,23 @@
               <form class="form update-drink" id="update-drink" role="form">
                 <div class="form-group">
                   <label for="updateName">Name</label>
-                  <input type="text" class="form-control" name="drinks[name]" />
+                  <input type="text" class="form-control" name="drinks[name]" id="update-name"/>
                 </div>
                 <div class="form-group">
                   <label for="updateIngredients">Ingredients</label>
-                  <input type="text" class="form-control" name="drinks[ingredients]" />
+                  <input type="text" class="form-control" name="drinks[ingredients]" id="update-ingredients"/>
                 </div>
                 <div class="form-group">
                   <label for="updateToppings">Toppings</label>
-                  <input type="text" class="form-control" name="drinks[toppings]" />
+                  <input type="text" class="form-control" name="drinks[toppings]" id="update-toppings"/>
                 </div>
                 <div class="form-group">
                   <label for="updateNotes">Notes</label>
-                  <input type="text" class="form-control" name="drinks[notes]" />
+                  <input type="text" class="form-control" name="drinks[notes]" id="update-notes"/>
                 </div>
                 <div class="form-group">
                   <label for="updateStoreId">Store ID</label>
-                  <input type="text" class="form-control" name="drinks[store_id]" />
+                  <input type="text" class="form-control" name="drinks[store_id]" id="update-store"/>
                 </div>
                 <button type="submit" class="btn btn-primary update-drink-submit">Submit</button>
               </form>
@@ -277,15 +277,14 @@
 <img class="hero" src="https://images.unsplash.com/photo-1449707114183-b9e2e0e619dc?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=4c99a2656c625150d59004c7f015fd9c">
 
 <div class="below-hero">
-  <div>
-    <h1>Bubble Tea Time</h1></div>
+  <div><h1>Bubble Tea Time</h1></div>
 
-  <div class="button nav stores">
-    <button type="button" class="btn btn-primary btn-md stores kft">Kung Fu Tea</button>
-    <button type="button" class="btn btn-primary btn-md stores chatime">Chatime</button>
-    <button type="button" class="btn btn-primary btn-md stores teado">Teado</button>
-    <button type="button" class="btn btn-primary btn-md stores all">View All</button>
-  </div>
+<div class="stores-container" align="center">
+  <button type="button" class="btn btn-primary btn-md kft">Kung Fu Tea</button>
+  <button type="button" class="btn btn-primary btn-md chatime">Chatime</button>
+  <button type="button" class="btn btn-primary btn-md teado">Teado</button>
+  <button type="button" class="btn btn-primary btn-md all">View All</button>
+</div>
 
 
   <div class="content"></div>
