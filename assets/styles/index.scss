@@ -61,6 +61,18 @@ h1 {
   }
 }
 
+.comment {
+  border: 1px solid;
+  margin: 5px;
+  padding: 5px;
+}
+
+.comment-form {
+  padding: 0px;
+  height: 50px;
+  width: 100%;
+}
+
 .content {
   align-content: center;
   position: relative;
@@ -75,7 +87,7 @@ h1 {
   border-style: solid;
   float: left;
   font-size: 16px;
-  height: 180px;
+  height: auto;
   margin: 5px;
   padding: 10px;
   width: 400px;
