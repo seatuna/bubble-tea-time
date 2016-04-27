@@ -8,6 +8,7 @@
 let ajaxAuth = require('./ajax-authentication');
 let ajaxDrinks = require('./ajax-drinks');
 let get = require('./get-drinks.js');
+let ajaxComments = require('./ajax-comments.js');
 
 // Event handlers for GET drinks, these are the store buttons
 
@@ -45,6 +46,18 @@ $('#update-drink').on('submit', function(e) {
 
 // Delete drink
 $('.content').on('click', '.delete-drink', ajaxDrinks.deleteDrink);
+
+// Create comment
+$('.content').on('click', '.create-comment', ajaxDrinks.getDrinkId);
+$('#add-comment').on('submit', function(e) {
+  ajaxDrinks.createComment(e, ajaxDrinks.getDrinkId);
+});
+
+// $('.content').on('click', '.comment-submit', function() {
+//   ajaxComments.createComment(function() {
+//     $('#comment-textarea').val();
+//   });
+// });
 
 $(document).ready(function() {
   get.getDrinks();

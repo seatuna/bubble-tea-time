@@ -8,6 +8,7 @@ let displayDrinks = function(response){
   let drinkListing = require('./iterate-drinks.handlebars');
     $('.content').html(drinkListing({drinks
     }));
+    $('#comment-textarea').val();
 };
 
 let getDrinks = function(){
