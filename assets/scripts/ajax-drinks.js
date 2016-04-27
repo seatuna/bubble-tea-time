@@ -73,6 +73,29 @@ let deleteDrink = function(e) {
   });
 };
 
+// Create Comment
+
+let createComment = function(e) {
+  e.preventDefault();
+  let formData = new FormData(e.target);
+
+  $.ajax({
+    url: bubbleTea.bbtApp.baseUrl + '/drinks/' + drinkId + '/comments',
+    headers: {
+      Authorization: 'Token token=' + bubbleTea.bbtApp.user.token,
+    },
+    method: 'POST',
+    contentType: false,
+    processData: false,
+    data: formData,
+  }).done(function(data) {
+    console.log(data);
+    get.getDrinks();
+  }).fail(function(jqxhr) {
+    console.error(jqxhr);
+  });
+};
+
 // Populate update modal with text
 let fillUpdate = function(response) {
   let drink = response.drink;
@@ -98,5 +121,6 @@ module.exports = {
   createDrink,
   updateDrink,
   getDrinkId,
-  deleteDrink
+  deleteDrink,
+  createComment
 };

@@ -10,18 +10,19 @@
     {{!-- {{/if}} --}}
 
     <p>
-      <a data-toggle="collapse" href="#commentsCollapse{{id}}" aria-expanded="false" aria-controls="collapseExample">
+      <a data-toggle="collapse" href="#commentsCollapse{{id}}" aria-expanded="false" aria-controls="collapseExample" id="comments-link">
         <span class="pull-right">Comments</span><br/>
       </a>
     </p>
     <div class="collapse" id="commentsCollapse{{id}}">
 
-      {{!-- {{#if bubbleTea.bbtApp.user}} --}}
-      <div>
-        <textarea rows="3" class="comment-form" name="comments[comment]"></textarea>
-        <button type="submit" class="btn btn-primary comment-submit">Add Comment</button>
-      </div>
-      {{!-- {{/if}} --}}
+      <button class="btn btn-primary btn-md create-comment" data-toggle="modal" data-target="#createCommentModal" data-id= {{id}}>Add Comment</button>
+      <!-- {{#if bubbleTea.bbtApp.user}}
+
+          <textarea rows="3" class="comment-form" name="comments[comment]" id="comment-textarea"></textarea>
+          <button type="submit" class="btn btn-primary comment-submit" data-id={{id}}>Add Comment</button>
+
+      {{/if}} -->
 
       {{#each comments}}
         <div class="comment">{{comment}}</div>
