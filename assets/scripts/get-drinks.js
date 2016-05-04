@@ -2,13 +2,19 @@
 
 let bubbleTea = require('./const_bubbletea.js');
 
+let showButtons = function() {
+  if(bubbleTea.bbtApp.user) {
+    $('.update-and-delete').show();
+    $('.comment-button').show();
+  }
+};
+
 let displayDrinks = function(response){
   console.log('displayDrinks works');
   let drinks = response.drinks;
   let drinkListing = require('./iterate-drinks.handlebars');
     $('.content').html(drinkListing({drinks
     }));
-    $('#comment-textarea').val();
 };
 
 let getDrinks = function(){
@@ -18,6 +24,7 @@ let getDrinks = function(){
     dataType: 'json'
   }).done(function(drinks){
     displayDrinks(drinks);
+    showButtons();
     console.log(drinks);
     console.log('getDrinks work');
   });
@@ -39,6 +46,7 @@ let getKftDrinks = function(){
     dataType: 'json'
   }).done(function(drinks){
     displayKftDrinks(drinks);
+    showButtons();
     console.log('getKftDrinks work');
   });
 };
@@ -61,6 +69,7 @@ let getChatimeDrinks = function(){
     dataType: 'json'
   }).done(function(drinks){
     displayChatimeDrinks(drinks);
+    showButtons();
     console.log('getChatimeDrinks work');
   });
 };
@@ -81,6 +90,7 @@ let getTeadoDrinks = function(){
     dataType: 'json'
   }).done(function(drinks){
     displayTeadoDrinks(drinks);
+    showButtons();
     console.log('getTeadoDrinks work');
   });
 };

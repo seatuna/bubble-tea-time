@@ -14,10 +14,17 @@ $black: #000;
 body {
   background-attachment: fixed;
   background-color: $black;
-  // background-image: url('http://img.photobucket.com/albums/v53/chibi_ynm/tapioca2_zpsreibrwqj.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   margin-top: 3em;
+}
+
+body::-webkit-scrollbar {
+  background-color: $black;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: $pink-orange;
 }
 
 h1 {
@@ -67,6 +74,11 @@ h1 {
   padding: 5px;
 }
 
+.comment-collapse {
+  position: relative;
+  margin-bottom: 0;
+}
+
 .comment-form {
   height: 50px;
   width: 100%;
@@ -74,6 +86,7 @@ h1 {
 
 .content {
   align-content: center;
+  margin: 0 auto;
   position: relative;
   width: 100%;
   z-index: 100;
@@ -86,10 +99,19 @@ h1 {
   border-style: solid;
   float: left;
   font-size: 16px;
-  height: auto;
+  height: 160px;
   margin: 5px;
+  overflow-y: scroll;
   padding: 10px;
   width: 400px;
+}
+
+.drinks::-webkit-scrollbar {
+  background-color: $light-pink;
+}
+
+.drinks::-webkit-scrollbar-thumb {
+  background-color: $pink-orange;
 }
 
 .hero {
