@@ -8,7 +8,7 @@
 let ajaxAuth = require('./ajax-authentication');
 let ajaxDrinks = require('./ajax-drinks');
 let get = require('./get-drinks.js');
-let ajaxComments = require('./ajax-comments.js');
+// let ajaxComments = require('./ajax-comments.js');
 
 // Event handlers for GET drinks, these are the store buttons
 
