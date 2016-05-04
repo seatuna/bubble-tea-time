@@ -3,7 +3,7 @@
     {{name}}<br/> Ingredients: {{ingredients}}<br/> Toppings: {{toppings}}<br/> Notes: {{notes}}</br>
 
 
-      <div class="update-and-delete buttons">
+      <div class="update-and-delete" hidden>
         <button class="btn btn-primary btn-md update-drink" data-toggle="modal" data-target="#updateDrinkModal" data-id= {{id}}>Update</button>
         <button type="button" class="btn btn-primary btn-md delete-drink" data-id= {{id}} id="delete-drink">Delete</button>
       </div>
@@ -15,7 +15,7 @@
     </p>
     <div class="collapse" id="commentsCollapse{{id}}">
 
-      <button class="btn btn-primary btn-md create-comment" data-toggle="modal" data-target="#createCommentModal" data-id= {{id}}>Add Comment</button>
+      <div class="comment-button" hidden><button class="btn btn-primary btn-md create-comment" data-toggle="modal" data-target="#createCommentModal" data-id= {{id}}>Add Comment</button></div>
       <!-- {{#if bubbleTea.bbtApp.user}}
 
           <textarea rows="3" class="comment-form" name="comments[comment]" id="comment-textarea"></textarea>

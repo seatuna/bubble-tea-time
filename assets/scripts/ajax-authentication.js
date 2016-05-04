@@ -36,6 +36,7 @@ let signIn = function(e) {
     $('.btn.sign-out').show();
     $('.btn.add-drink').show();
     $('.update-and-delete').show();
+    $('.comment-button').show();
     $('.navbar-text').html("Welcome " + data.user.email + "!");
     console.log('signed in');
     console.log(data);
@@ -91,6 +92,8 @@ let signOut = function(e) {
     $('.btn.sign-out').hide();
     $('.btn.sign-in').show();
     $('.btn.add-drink').hide();
+    $('.update-and-delete').hide();
+    $('.comment-button').hide();
   }).fail(function(jqxhr) {
     console.error(jqxhr);
   });
