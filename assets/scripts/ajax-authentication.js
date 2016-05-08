@@ -89,6 +89,7 @@ let signOut = function(e) {
     $('.btn.add-drink').hide();
     $('.update-and-delete').hide();
     $('.comment-button').hide();
+    $('.navbar-text').empty('');
   }).fail(function(jqxhr) {
     console.error(jqxhr);
   });
