@@ -3,7 +3,6 @@
 let bubbleTea = require('./const_bubbletea');
 
 let signUp = function(e) {
-  console.log('sign up button works');
   e.preventDefault();
   var formData = new FormData(e.target);
   $.ajax({
@@ -13,7 +12,6 @@ let signUp = function(e) {
     processData: false,
     data: formData,
   }).done(function(data) {
-    console.log('New user created!');
     console.log(data);
   }).fail(function(jqxhr) {
     console.error(jqxhr);
@@ -38,7 +36,6 @@ let signIn = function(e) {
     $('.update-and-delete').show();
     $('.comment-button').show();
     $('.navbar-text').html("Welcome " + data.user.email + "!");
-    console.log('signed in');
     console.log(data);
   }).fail(function(jqxhr) {
     console.error(jqxhr);
@@ -49,7 +46,7 @@ let changePassword = function(e) {
   e.preventDefault();
 
   if (!bubbleTea.bbtApp.user) {
-    console.error('Wrong!');
+    console.error('Wrong user, can\'t change password!');
     return;
   }
 
@@ -65,7 +62,6 @@ let changePassword = function(e) {
     data: formData,
   }).done(function(data) {
     console.log(data);
-    console.log('change pw worked');
   }).fail(function(jqxhr) {
     console.error(jqxhr);
   });
@@ -75,7 +71,7 @@ let signOut = function(e) {
   e.preventDefault();
 
   if (!bubbleTea.bbtApp.user) {
-    console.error('Wrong!');
+    console.error('Wrong user, can\'t sign out!');
     return;
   }
 
@@ -87,7 +83,6 @@ let signOut = function(e) {
     },
   }).done(function(data) {
     console.log(data);
-    console.log('logged out');
     $('.btn.change-pw').hide();
     $('.btn.sign-out').hide();
     $('.btn.sign-in').show();
