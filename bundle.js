@@ -102,7 +102,6 @@ webpackJsonp([0],[
 	var bubbleTea = __webpack_require__(4);
 
 	var signUp = function signUp(e) {
-	  console.log('sign up button works');
 	  e.preventDefault();
 	  var formData = new FormData(e.target);
 	  $.ajax({
@@ -112,7 +111,6 @@ webpackJsonp([0],[
 	    processData: false,
 	    data: formData
 	  }).done(function (data) {
-	    console.log('New user created!');
 	    console.log(data);
 	  }).fail(function (jqxhr) {
 	    console.error(jqxhr);
@@ -137,7 +135,6 @@ webpackJsonp([0],[
 	    $('.update-and-delete').show();
 	    $('.comment-button').show();
 	    $('.navbar-text').html("Welcome " + data.user.email + "!");
-	    console.log('signed in');
 	    console.log(data);
 	  }).fail(function (jqxhr) {
 	    console.error(jqxhr);
@@ -148,7 +145,7 @@ webpackJsonp([0],[
 	  e.preventDefault();
 
 	  if (!bubbleTea.bbtApp.user) {
-	    console.error('Wrong!');
+	    console.error('Wrong user, can\'t change password!');
 	    return;
 	  }
 
@@ -164,7 +161,6 @@ webpackJsonp([0],[
 	    data: formData
 	  }).done(function (data) {
 	    console.log(data);
-	    console.log('change pw worked');
 	  }).fail(function (jqxhr) {
 	    console.error(jqxhr);
 	  });
@@ -174,7 +170,7 @@ webpackJsonp([0],[
 	  e.preventDefault();
 
 	  if (!bubbleTea.bbtApp.user) {
-	    console.error('Wrong!');
+	    console.error('Wrong user, can\'t sign out!');
 	    return;
 	  }
 
@@ -186,7 +182,6 @@ webpackJsonp([0],[
 	    }
 	  }).done(function (data) {
 	    console.log(data);
-	    console.log('logged out');
 	    $('.btn.change-pw').hide();
 	    $('.btn.sign-out').hide();
 	    $('.btn.sign-in').show();
@@ -368,7 +363,6 @@ webpackJsonp([0],[
 	};
 
 	var displayDrinks = function displayDrinks(response) {
-	  console.log('displayDrinks works');
 	  var drinks = response.drinks;
 	  var drinkListing = __webpack_require__(7);
 	  $('.content').html(drinkListing({ drinks: drinks
@@ -383,14 +377,11 @@ webpackJsonp([0],[
 	  }).done(function (drinks) {
 	    displayDrinks(drinks);
 	    showButtons();
-	    console.log(drinks);
-	    console.log('getDrinks work');
 	  });
 	};
 
 	// Click on Kung Fu Tea button to get only KFT drinks
 	var displayKftDrinks = function displayKftDrinks(response) {
-	  console.log('displayKftDrinks works');
 	  var drinks = response.store.drinks;
 	  var drinkListing = __webpack_require__(7);
 	  $('.content').html(drinkListing({ drinks: drinks
@@ -405,13 +396,11 @@ webpackJsonp([0],[
 	  }).done(function (drinks) {
 	    displayKftDrinks(drinks);
 	    showButtons();
-	    console.log('getKftDrinks work');
 	  });
 	};
 
 	// Click on Chatime button to get only Chatime displayKftDrinks
 	var displayChatimeDrinks = function displayChatimeDrinks(response) {
-	  console.log('displayChatimeDrinks works');
 	  var drinks = response.store.drinks;
 	  var drinkListing = __webpack_require__(7);
 	  $('.content').html(drinkListing({ drinks: drinks
@@ -426,13 +415,11 @@ webpackJsonp([0],[
 	  }).done(function (drinks) {
 	    displayChatimeDrinks(drinks);
 	    showButtons();
-	    console.log('getChatimeDrinks work');
 	  });
 	};
 
 	// Click on Teado button to get only Teado displayKftDrinks
 	var displayTeadoDrinks = function displayTeadoDrinks(response) {
-	  console.log('displayTeadoDrinks works');
 	  var drinks = response.store.drinks;
 	  var drinkListing = __webpack_require__(7);
 	  $('.content').html(drinkListing({ drinks: drinks
@@ -447,7 +434,6 @@ webpackJsonp([0],[
 	  }).done(function (drinks) {
 	    displayTeadoDrinks(drinks);
 	    showButtons();
-	    console.log('getTeadoDrinks work');
 	  });
 	};
 
