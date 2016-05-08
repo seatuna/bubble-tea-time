@@ -188,6 +188,7 @@ webpackJsonp([0],[
 	    $('.btn.add-drink').hide();
 	    $('.update-and-delete').hide();
 	    $('.comment-button').hide();
+	    $('.navbar-text').empty('');
 	  }).fail(function (jqxhr) {
 	    console.error(jqxhr);
 	  });
