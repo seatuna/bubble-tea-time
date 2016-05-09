@@ -44,6 +44,7 @@ their old and new password
 Logged in as non-admin:
 * User can do everything a non-admin can do
 * User can change password
+* Create comments
 
 ## Tools
 
@@ -53,10 +54,8 @@ This web app was created using the following:
 * Bootstrap
 * Handlebars.js
 
-## Some Things to Work On
-Currently, I was unable to hide the update and delete buttons when not logged
-in.  I believe this is due to the buttons having been generated through
-Handlebars.js.  For the future, I would like to fix this.  I was also in the
-process of adding the ability for non-admin users to post comments on drinks
-but have not completed it as of the presentation.  This is something I hope to
-continue to work on!
+## Additions since initial presentation
+
+As of May, the issue with update and delete buttons showing up when not logged
+in has been resolved.  Adding comments to a drink has also been added as a new
+feature.
